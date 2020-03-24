@@ -1,8 +1,27 @@
+body { 
+    background-color: orange;
+}
 form {
 	font-family: : verdana;
+}
+div{
+	background-color: rgb(247, 247, 247);
+  	width: 1200px;
+  	border: 15px solid black;
+  	padding: 30px;
+  	margin: 10px;
+}
+h1{
+	color: orange:;
+	text-align: center;
 }
 p {
 	font-size: 20px;
 	font-family: : verdana;
-
+	text-align: center;
+	background-color: rgb(247, 247, 247);
+  	width: 1200px;
+  	border: 15px solid black;
+  	padding: 30px;
+  	margin: 10px;
 }
