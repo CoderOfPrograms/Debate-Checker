@@ -9,28 +9,32 @@
 		<a> | </a>
 		<a href="lib.html">Ableism and Feminism Library</a>
 		<script type="text/javascript">
+		function passwordd(){
 			var tries = 0;
 			var evil = 1;
 			var password = prompt("Password");
 			while (evil==1){
 				if (password == "w" && tries<=3){
-					break
+					break;
 				}
 				else{
 					tries= tries+1;
 				}
 				var password = prompt("Password");
 			}
-			function mFunction() {
+		}
+		passwordd();
+			function scanCheck() {
+				function checkForWords(){
   				alert("Proccesed request.");
-				var pop = document.forms["myForm"]["fname"].value;
-				var poop = pop.replace(/\W/g, ' ');
-				var person = poop.toLowerCase();
+				var formInput = document.forms["myForm"]["fname"].value;
+				var noUnwantedCharacters = formInput.replace(/\W/g, ' ');
+				var lowerVersion = noUnwantedCharacters.toLowerCase();
 				document.write("The questionable words :");
 				stri = function (str) {
 	     			return str.trim().split(" ");
 				};
-				var hi = stri(person);
+				var hi = stri(lowerVersion);
 				var x = 0;
 				var q = 0;
 				var w = 0;
@@ -216,6 +220,9 @@
 	    			}
 
 				} 
+			}
+			function executeProperly(){
+			function linksAfterScan(){
 				document.write("<br>");
 				var a = document.createElement('a');
       			var linkText = document.createTextNode("Ableism and Feminism Checker");
@@ -229,14 +236,28 @@
       			a.appendChild(linkText);
       			a.title = "Ableism and Feminism Library";
       			a.href = "lib.html";
-     			 document.body.appendChild(a);
-				}
+     			 document.body.appendChild(a)
+			}
+			if (typeof checkForWords === 'function'){
+				checkForWords();		
+			}
+			else{
+				document.write("error");
+			}
+			if (typeof linksAfterScan === 'function'){
+				linksAfterScan();
+		}else{
+				document.write("error");
+			}
+		}
+			executeProperly();
+			}
 
   		</script>
   		<div>
   			<h1>Ableism and Feminism Rhetoric Checker</h1>
   		</div>
-		<form name="myForm" action="/action_page.php" onsubmit="return mFunction();" method="post">
+		<form name="myForm" action="/action_page.php" onsubmit="return scanCheck();" method="post">
   			Text: <input type="text" name="fname">
   			<input type="submit" value="Submit">
 		</form>
